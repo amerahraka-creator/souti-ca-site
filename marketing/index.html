@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Souti AAC | Marketing</title>
+  <meta name="description" content="Official commercial and marketing material for Souti AAC." />
+  <link rel="canonical" href="https://souti.ca/marketing/" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Souti<span>.ca</span></div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/marketing/">Marketing</a>
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-hero">
+      <h1>Marketing Material</h1>
+      <p class="lead">Commercial visuals for Souti AAC. This page includes all images and videos currently in <code>/assets/media/</code>.</p>
+    </section>
+
+    <section class="media" id="media-gallery"></section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Souti AAC.</div>
+  </footer>
+  <script>
+    const mediaAssets = [
+      "1 ipad.jpg",
+      "1.1 ipad.jpg",
+      "123ipad.jpg",
+      "1E\\A.jpg",
+      "1ipad.jpg",
+      "1reorder.jpg",
+      "1speak.jpg",
+      "1take pic.jpg",
+      "1zoom.jpg",
+      "2ipad.jpg",
+      "3ipad.jpg",
+      "4ipad.jpg",
+      "Souti.mov",
+      "ipad speak.jpg",
+      "phone12.jpg"
+    ];
+
+    const toTitle = (filename) => {
+      const noExt = filename.replace(/\.[^/.]+$/, "");
+      const normalized = noExt.replace(/[_-]+/g, " ");
+      return normalized
+        .replace(/\bipad\b/gi, "iPad")
+        .replace(/\s+/g, " ")
+        .trim();
+    };
+
+    const gallery = document.getElementById("media-gallery");
+    mediaAssets.forEach((filename) => {
+      const isVideo = /\.(mp4|mov|webm)$/i.test(filename);
+      const title = toTitle(filename);
+      const encoded = encodeURIComponent(filename);
+
+      const item = document.createElement("article");
+      item.className = "media-item";
+
+      if (isVideo) {
+        item.innerHTML = `
+          <video controls preload="metadata" playsinline>
+            <source src="../assets/media/${encoded}" type="video/quicktime" />
+            Your browser does not support the video tag.
+          </video>
+          <p>${title}</p>
+        `;
+      } else {
+        item.innerHTML = `
+          <img src="../assets/media/${encoded}" alt="Souti AAC commercial ${title}" loading="lazy" />
+          <p>${title}</p>
+        `;
+      }
+
+      gallery.appendChild(item);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
