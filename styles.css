@@ -70,6 +70,57 @@ header {
 
 .nav-links a:hover { background: #f1edff; }
 
+.lang-switch {
+  display: flex;
+  background: #eee3ff;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.lang-switch button {
+  border: none;
+  background: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  color: #4d31a8;
+  transition: all 0.2s;
+}
+
+.lang-switch button.active {
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .hero {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+[dir="rtl"] .hero-card {
+  order: -1;
+}
+
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .badge,
+[dir="rtl"] .btn {
+  font-family: "Cairo", sans-serif;
+}
+
+[dir="rtl"] ul {
+  padding-right: 20px;
+  padding-left: 0;
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -244,6 +295,22 @@ footer {
 }
 
 .list p { margin: 0 0 10px; }
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item strong {
+  color: var(--brand);
+  display: block;
+  margin-bottom: 5px;
+}
 
 @media (max-width: 920px) {
   .hero { grid-template-columns: 1fr; }

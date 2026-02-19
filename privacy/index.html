@@ -12,34 +12,51 @@
   <header>
     <div class="container nav">
       <div class="brand">Souti<span>.ca</span></div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/marketing/">Marketing</a>
-        <a href="/support/">Support</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switch">
+          <button onclick="applyLanguage('en')">English</button>
+          <button onclick="applyLanguage('ar')">العربية</button>
+        </div>
+        <nav class="nav-links">
+          <a href="/" data-i18n="nav-home">Home</a>
+          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
+          <a href="/support/" data-i18n="nav-support">Support</a>
+          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
+          <a href="/terms/" data-i18n="nav-terms">Terms</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="page-hero">
-      <h1>Privacy Policy</h1>
-      <p class="lead">Effective date: February 16, 2026</p>
+      <h1 data-i18n="privacy-title">Privacy Policy</h1>
+      <p class="lead" data-i18n="privacy-effective">Effective date: February 16, 2026</p>
     </section>
 
     <section class="list">
-      <p>Souti AAC is designed for communication support. We only collect data needed to operate and improve the app.</p>
-      <p>Information may include account/profile data, app settings, and diagnostics.</p>
-      <p>We do not sell personal data.</p>
-      <p>Account deletion and privacy contact details will be published on this page after mailbox setup is complete.</p>
-      <p>For children’s privacy requests, the same contact channel will be used once published.</p>
+      <h3 data-i18n="privacy-usage-title">Data Collection & Usage</h3>
+      <p data-i18n="privacy-usage-lead">Souti AAC is committed to protecting user privacy, especially for children. We collect minimal data necessary for the app's core functionality:</p>
+      <ul>
+        <li data-i18n="privacy-usage-1"><strong>Account Data:</strong> Email address for subscription management and cross-device sync.</li>
+        <li data-i18n="privacy-usage-2"><strong>Custom Content:</strong> User-uploaded images and audio recordings are stored securely to provide your personalized AAC experience.</li>
+        <li data-i18n="privacy-usage-3"><strong>Usage Analytics:</strong> Anonymous diagnostics to help us fix bugs and improve performance.</li>
+      </ul>
+
+      <h3 data-i18n="privacy-protection-title">Data Protection</h3>
+      <p data-i18n="privacy-protection-desc">We do not sell, rent, or trade your personal data with third parties. All communication between the app and our servers is encrypted.</p>
+
+      <h3 data-i18n="privacy-rights-title">User Rights & Deletion</h3>
+      <p data-i18n="privacy-rights-desc">You have full control over your data. Account deletion and privacy contact details will be published here once mailbox setup is complete.</p>
+
+      <h3 data-i18n="privacy-coppa-title">Children's Privacy (COPPA)</h3>
+      <p data-i18n="privacy-coppa-desc">Souti AAC complies with COPPA. We do not knowingly collect personal information from children without parental consent. For any privacy-related inquiries regarding a minor, please contact us with guardian verification.</p>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Souti AAC.</div>
+    <div class="container">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights"></span></div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../i18n.js"></script>
 </body>
 </html>

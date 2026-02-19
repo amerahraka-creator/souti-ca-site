@@ -12,33 +12,83 @@
   <header>
     <div class="container nav">
       <div class="brand">Souti<span>.ca</span></div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/marketing/">Marketing</a>
-        <a href="/support/">Support</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switch">
+          <button onclick="applyLanguage('en')">English</button>
+          <button onclick="applyLanguage('ar')">العربية</button>
+        </div>
+        <nav class="nav-links">
+          <a href="/" data-i18n="nav-home">Home</a>
+          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
+          <a href="/support/" data-i18n="nav-support">Support</a>
+          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
+          <a href="/terms/" data-i18n="nav-terms">Terms</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="page-hero">
-      <h1>Support</h1>
-      <p class="lead">For help with setup, subscriptions, bugs, and feature requests, contact support.</p>
+      <h1 data-i18n="support-title">Support</h1>
+      <p class="lead" data-i18n="support-lead">For help with setup, subscriptions, bugs, and feature requests, contact support.</p>
     </section>
 
     <section class="list">
-      <p><strong>Status:</strong> Support mailbox provisioning is in progress.</p>
-      <p><strong>Support URL:</strong> <a href="https://souti.ca/support/">https://souti.ca/support/</a></p>
-      <p><strong>Expected response time:</strong> 1-3 business days once email support is enabled.</p>
-      <p><strong>Include in your message:</strong> device type, iOS version, app version, and screenshots if possible.</p>
+      <div style="margin-bottom: 24px;">
+        <h3 data-i18n="support-contact-title">Contact Information</h3>
+        <p data-i18n="support-mailbox-status">Support mailbox provisioning is in progress.</p>
+        <p><strong data-i18n="support-url-label">Support URL:</strong> <a href="https://souti.ca/support/">https://souti.ca/support/</a></p>
+        <p data-i18n="support-response">Expected response time: 1-3 business days once email support is enabled.</p>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h3 data-i18n="support-tech-title">Technical Support</h3>
+        <p data-i18n="support-tech-lead">For the fastest resolution, please include the following in your message:</p>
+        <ul>
+          <li data-i18n="support-tech-1">Device type (e.g., iPad Pro 11-inch)</li>
+          <li data-i18n="support-tech-2">iOS version</li>
+          <li data-i18n="support-tech-3">App version (found in Settings)</li>
+          <li data-i18n="support-tech-4">Screenshots or screen recordings of the issue</li>
+        </ul>
+      </div>
+
+      <div id="faq-list">
+        <h3 data-i18n="support-faq-title">Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q1"></strong><br><span data-i18n="support-a1"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q2"></strong><br><span data-i18n="support-a2"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q3"></strong><br><span data-i18n="support-a3"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q4"></strong><br><span data-i18n="support-a4"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q5"></strong><br><span data-i18n="support-a5"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q6"></strong><br><span data-i18n="support-a6"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q7"></strong><br><span data-i18n="support-a7"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q8"></strong><br><span data-i18n="support-a8"></span></p>
+        </div>
+        <div class="faq-item">
+          <p><strong data-i18n="support-q9"></strong><br><span data-i18n="support-a9"></span></p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Souti AAC.</div>
+    <div class="container">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights"></span></div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../i18n.js"></script>
 </body>
 </html>

@@ -12,25 +12,31 @@
   <header>
     <div class="container nav">
       <div class="brand">Souti<span>.ca</span></div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/marketing/">Marketing</a>
-        <a href="/support/">Support</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switch">
+          <button onclick="applyLanguage('en')" id="btn-en">English</button>
+          <button onclick="applyLanguage('ar')" id="btn-ar">العربية</button>
+        </div>
+        <nav class="nav-links">
+          <a href="/" data-i18n="nav-home">Home</a>
+          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
+          <a href="/support/" data-i18n="nav-support">Support</a>
+          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
+          <a href="/terms/" data-i18n="nav-terms">Terms</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
       <div>
-        <span class="badge">AAC for Arabic + English</span>
-        <h1>Communicate with Pictures & Voice in Arabic and English</h1>
-        <p class="lead">Souti AAC helps children build full sentences, learn vocabulary, and communicate clearly using symbols, custom audio, and child-friendly layouts.</p>
+        <span class="badge" data-i18n="hero-badge">AAC for Arabic + English</span>
+        <h1 data-i18n="hero-title">Communicate with Pictures & Voice in Arabic and English</h1>
+        <p class="lead" data-i18n="hero-lead">Souti AAC helps children build full sentences, learn vocabulary, and communicate clearly using symbols, custom audio, and child-friendly layouts.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://apps.apple.com" target="_blank" rel="noopener">Download on App Store</a>
-          <a class="btn btn-secondary" href="/marketing/">View Commercial Media</a>
+          <a class="btn btn-primary" href="https://apps.apple.com" target="_blank" rel="noopener" data-i18n="cta-download">Download on App Store</a>
+          <a class="btn btn-secondary" href="/marketing/" data-i18n="cta-media">View Commercial Media</a>
         </div>
       </div>
       <div class="hero-card">
@@ -39,51 +45,60 @@
     </section>
 
     <section class="section">
-      <h2>What makes Souti AAC useful</h2>
-      <p>Built for daily communication, language development, and classroom/home use.</p>
+      <h2 data-i18n="features-title">What makes Souti AAC useful</h2>
+      <p data-i18n="features-lead">Built for daily communication, language development, and classroom/home use.</p>
       <div class="grid">
         <article class="card">
-          <h3>Full Sentence Speech</h3>
-          <p>Tap symbols, then press Speak to pronounce complete Arabic or English sentences.</p>
+          <h3 data-i18n="feature-1-title">Full Sentence Speech</h3>
+          <p data-i18n="feature-1-desc">Tap symbols, then press Speak to pronounce complete Arabic or English sentences.</p>
         </article>
         <article class="card">
-          <h3>Drag to Reorder</h3>
-          <p>Rearrange symbols to match each child’s needs and communication style.</p>
+          <h3 data-i18n="feature-2-title">Drag to Reorder</h3>
+          <p data-i18n="feature-2-desc">Rearrange symbols to match each child’s needs and communication style.</p>
         </article>
         <article class="card">
-          <h3>Custom Media</h3>
-          <p>Add your own pictures and record custom voice clips for personalized symbols.</p>
+          <h3 data-i18n="feature-3-title">Custom Media</h3>
+          <p data-i18n="feature-3-desc">Add your own pictures and record custom voice clips for personalized symbols.</p>
         </article>
         <article class="card">
-          <h3>Zoom & Accessibility</h3>
-          <p>Zoom symbols for easier tapping and better visibility on iPhone and iPad.</p>
+          <h3 data-i18n="feature-4-title">Zoom & Accessibility</h3>
+          <p data-i18n="feature-4-desc">Zoom symbols for easier tapping and better visibility on iPhone and iPad.</p>
         </article>
         <article class="card">
-          <h3>Bilingual by Design</h3>
-          <p>Switch and use both Arabic and English across communication categories.</p>
+          <h3 data-i18n="feature-5-title">Bilingual by Design</h3>
+          <p data-i18n="feature-5-desc">Switch and use both Arabic and English across communication categories.</p>
         </article>
         <article class="card">
-          <h3>School Vocabulary</h3>
-          <p>Structured school categories support practical learning and classroom expression.</p>
+          <h3 data-i18n="feature-6-title">School Vocabulary</h3>
+          <p data-i18n="feature-6-desc">Structured school categories support practical learning and classroom expression.</p>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>Support and Privacy</h2>
-      <p>Need help or have a policy question? Use the links below.</p>
-      <div class="cta-row">
-        <a class="btn btn-secondary" href="/support/">Get Support</a>
-        <a class="btn btn-secondary" href="/privacy/">Privacy Policy</a>
-        <a class="btn btn-secondary" href="/terms/">Terms of Use</a>
+      <h2 data-i18n="review-title">App Store Review Resources</h2>
+      <p data-i18n="review-lead">Official links required for App Store Connect and review compliance.</p>
+      <div class="grid">
+        <a href="/support/" class="card" style="text-decoration: none; color: inherit;">
+          <h3 data-i18n="nav-support">Support URL</h3>
+          <p data-i18n="review-support-desc">Contact information and user assistance.</p>
+        </a>
+        <a href="/marketing/" class="card" style="text-decoration: none; color: inherit;">
+          <h3 data-i18n="nav-marketing">Marketing URL</h3>
+          <p data-i18n="review-marketing-desc">Commercial media and app demonstrations.</p>
+        </a>
+        <a href="/privacy/" class="card" style="text-decoration: none; color: inherit;">
+          <h3 data-i18n="nav-privacy">Privacy Policy</h3>
+          <p data-i18n="review-privacy-desc">Data handling and user protection details.</p>
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Souti AAC. All rights reserved.</div>
+    <div class="container">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights">All rights reserved.</span></div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="./i18n.js"></script>
 </body>
 </html>
