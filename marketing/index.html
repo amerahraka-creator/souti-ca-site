@@ -43,40 +43,36 @@
   <script src="../i18n.js"></script>
   <script>
     const mediaAssets = [
-      "1 ipad.jpg",
-      "1.1 ipad.jpg",
-      "123ipad.jpg",
-      "1E\\A.jpg",
-      "1ipad.jpg",
-      "1reorder.jpg",
-      "1speak.jpg",
-      "1take pic.jpg",
-      "1zoom.jpg",
-      "2ipad.jpg",
-      "3ipad.jpg",
-      "4ipad.jpg",
-      "Souti.mov",
-      "ipad speak.jpg",
-      "phone12.jpg"
+      { file: "1 ipad.jpg", titleEn: "iPad Communication Board", titleAr: "لوحة التواصل على الآيباد" },
+      { file: "1.1 ipad.jpg", titleEn: "iPad Full Sentence Speech", titleAr: "نطق الجمل الكاملة على الآيباد" },
+      { file: "123ipad.jpg", titleEn: "iPad Category Navigation", titleAr: "التنقل بين الفئات على الآيباد" },
+      { file: "1E\\A.jpg", titleEn: "Arabic and English Support", titleAr: "دعم العربية والإنجليزية" },
+      { file: "1ipad.jpg", titleEn: "iPad Main Screen", titleAr: "الشاشة الرئيسية على الآيباد" },
+      { file: "1reorder.jpg", titleEn: "Reorder Symbols", titleAr: "إعادة ترتيب الرموز" },
+      { file: "1speak.jpg", titleEn: "Tap Speak Feature", titleAr: "ميزة اضغط للتحدث" },
+      { file: "1take pic.jpg", titleEn: "Add Custom Pictures and Voices", titleAr: "إضافة صور وأصوات مخصصة" },
+      { file: "1zoom.jpg", titleEn: "Zoom for Accessibility", titleAr: "تكبير لسهولة الوصول" },
+      { file: "2ipad.jpg", titleEn: "iPad Quick Communication", titleAr: "تواصل سريع على الآيباد" },
+      { file: "3ipad.jpg", titleEn: "iPad Learning Categories", titleAr: "فئات التعلم على الآيباد" },
+      { file: "4ipad.jpg", titleEn: "iPad School Vocabulary", titleAr: "مفردات المدرسة على الآيباد" },
+      { file: "Souti.mov", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي" },
+      { file: "ipad speak.jpg", titleEn: "iPad Speak Action", titleAr: "زر التحدث على الآيباد" },
+      { file: "phone12.jpg", titleEn: "iPhone Communication Layout", titleAr: "واجهة التواصل على الآيفون" }
     ];
 
-    const toTitle = (filename) => {
-      const noExt = filename.replace(/\.[^/.]+$/, "");
-      const normalized = noExt.replace(/[_-]+/g, " ");
-      return normalized
-        .replace(/\bipad\b/gi, "iPad")
-        .replace(/\s+/g, " ")
-        .trim();
-    };
+    const currentLang = () => (localStorage.getItem("preferred-lang") || "en").startsWith("ar") ? "ar" : "en";
+    const captionFor = (asset) => currentLang() === "ar" ? asset.titleAr : asset.titleEn;
 
     const gallery = document.getElementById("media-gallery");
-    mediaAssets.forEach((filename) => {
-      const isVideo = /\.(mp4|mov|webm)$/i.test(filename);
-      const title = toTitle(filename);
-      const encoded = encodeURIComponent(filename);
+    mediaAssets.forEach((asset) => {
+      const isVideo = /\.(mp4|mov|webm)$/i.test(asset.file);
+      const title = captionFor(asset);
+      const encoded = encodeURIComponent(asset.file);
 
       const item = document.createElement("article");
       item.className = "media-item";
+      item.setAttribute("data-caption-en", asset.titleEn);
+      item.setAttribute("data-caption-ar", asset.titleAr);
 
       if (isVideo) {
         item.innerHTML = `
@@ -84,12 +80,12 @@
             <source src="../assets/media/${encoded}" type="video/quicktime" />
             Your browser does not support the video tag.
           </video>
-          <p>${title}</p>
+          <p class="media-caption">${title}</p>
         `;
       } else {
         item.innerHTML = `
           <img src="../assets/media/${encoded}" alt="Souti AAC commercial ${title}" loading="lazy" />
-          <p>${title}</p>
+          <p class="media-caption">${title}</p>
         `;
       }
 

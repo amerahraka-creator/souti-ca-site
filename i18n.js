@@ -33,7 +33,7 @@ const i18n = {
     "marketing-title": "Marketing Material",
     "marketing-lead": "Commercial visuals for Souti AAC. This page includes all images and videos currently in /assets/media/.",
     "support-title": "Support",
-    "support-lead": "For help with setup, subscriptions, bugs, and feature requests, contact support.",
+    "support-lead": "For help with setup, purchases, bugs, and feature requests, contact support.",
     "support-contact-title": "Contact Information",
     "support-mailbox-status": "Support mailbox provisioning is in progress.",
     "support-url-label": "Support URL",
@@ -45,8 +45,8 @@ const i18n = {
     "support-tech-3": "App version (found in Settings)",
     "support-tech-4": "Screenshots or screen recordings of the issue",
     "support-faq-title": "Frequently Asked Questions",
-    "support-q1": "Is Souti a subscription app?",
-    "support-a1": "No. Souti is a one-time purchase app. Once you purchase it, it stays on your device — no monthly or yearly fees.",
+    "support-q1": "How is Souti purchased?",
+    "support-a1": "Souti is a one-time purchase app. Once you purchase it, it stays on your device with no recurring fees.",
     "support-q2": "Do I need internet to use Souti?",
     "support-a2": "No. Souti works offline once installed. You only need internet for downloading the app or updating it.",
     "support-q3": "Can I use my own photos and voice recordings?",
@@ -67,11 +67,19 @@ const i18n = {
     "privacy-effective": "Effective date: February 16, 2026",
     "privacy-usage-title": "Data Collection & Usage",
     "privacy-usage-lead": "Souti AAC is committed to protecting user privacy, especially for children. We collect minimal data necessary for the app's core functionality:",
-    "privacy-usage-1": "Account Data: Email address for subscription management and cross-device sync.",
+    "privacy-usage-1": "Account Data: Profile information is used for app settings and cross-device sync.",
     "privacy-usage-2": "Custom Content: User-uploaded images and audio recordings are stored securely to provide your personalized AAC experience.",
     "privacy-usage-3": "Usage Analytics: Anonymous diagnostics to help us fix bugs and improve performance.",
+    "privacy-purchase-title": "Purchases",
+    "privacy-purchase-desc": "Souti AAC is a one-time purchased app. We do not use recurring subscriptions or recurring billing.",
+    "privacy-permissions-title": "Permissions",
+    "privacy-permissions-1": "Camera access is used only when you choose to capture custom symbol images.",
+    "privacy-permissions-2": "Microphone access is used only when you choose to record custom voice clips.",
+    "privacy-permissions-3": "Photo library access is used only when you choose to upload or save custom images.",
     "privacy-protection-title": "Data Protection",
     "privacy-protection-desc": "We do not sell, rent, or trade your personal data with third parties. All communication between the app and our servers is encrypted.",
+    "privacy-storage-title": "Storage and Retention",
+    "privacy-storage-desc": "Custom symbols, images, and voice recordings are stored in app-controlled storage and may be synced to secure cloud infrastructure when you enable account sync. Data remains until you delete it in-app or request account deletion.",
     "privacy-rights-title": "User Rights & Deletion",
     "privacy-rights-desc": "You have full control over your data. Account deletion and privacy contact details will be published here once mailbox setup is complete.",
     "privacy-coppa-title": "Children's Privacy (COPPA)",
@@ -118,7 +126,7 @@ const i18n = {
     "marketing-title": "المواد التسويقية",
     "marketing-lead": "المرئيات التجارية لـ Souti AAC. تتضمن هذه الصفحة جميع الصور ومقاطع الفيديو الموجودة حاليًا في /assets/media/.",
     "support-title": "الدعم",
-    "support-lead": "للحصول على مساعدة في الإعداد، والاشتراكات، والأعطال، وطلبات الميزات، اتصل بالدعم.",
+    "support-lead": "للحصول على مساعدة في الإعداد والشراء والأعطال وطلبات الميزات، تواصل مع الدعم.",
     "support-contact-title": "معلومات الاتصال",
     "support-mailbox-status": "جاري تجهيز بريد الدعم الإلكتروني حالياً.",
     "support-url-label": "رابط الدعم",
@@ -130,8 +138,8 @@ const i18n = {
     "support-tech-3": "إصدار التطبيق (موجود في الإعدادات)",
     "support-tech-4": "لقطات شاشة أو تسجيلات شاشة للمشكلة",
     "support-faq-title": "الأسئلة الشائعة",
-    "support-q1": "هل Souti تطبيق اشتراك؟",
-    "support-a1": "لا. Souti هو تطبيق يُشترى لمرة واحدة. بمجرد شرائه، يبقى على جهازك — لا توجد رسوم شهرية أو سنوية.",
+    "support-q1": "كيف يتم شراء تطبيق Souti؟",
+    "support-a1": "Souti هو تطبيق يُشترى لمرة واحدة. بعد الشراء يبقى على جهازك بدون رسوم متكررة.",
     "support-q2": "هل أحتاج إلى إنترنت لاستخدام Souti؟",
     "support-a2": "لا. يعمل Souti بدون اتصال بالإنترنت بمجرد تثبيته. تحتاج فقط إلى الإنترنت لتحميل التطبيق أو تحديثه.",
     "support-q3": "هل يمكنني استخدام صوري الخاصة وتسجيلاتي الصوتية؟",
@@ -152,11 +160,19 @@ const i18n = {
     "privacy-effective": "تاريخ السريان: 16 فبراير 2026",
     "privacy-usage-title": "جمع البيانات واستخدامها",
     "privacy-usage-lead": "يلتزم Souti AAC بحماية خصوصية المستخدم، خاصة للأطفال. نحن نجمع الحد الأدنى من البيانات اللازمة لوظائف التطبيق الأساسية:",
-    "privacy-usage-1": "بيانات الحساب: عنوان البريد الإلكتروني لإدارة الاشتراكات والمزامنة عبر الأجهزة.",
+    "privacy-usage-1": "بيانات الحساب: تُستخدم معلومات الملف الشخصي لإعدادات التطبيق والمزامنة بين الأجهزة.",
     "privacy-usage-2": "المحتوى المخصص: يتم تخزين الصور التي يرفعها المستخدم والتسجيلات الصوتية بشكل آمن لتوفير تجربة AAC المخصصة لك.",
     "privacy-usage-3": "تحليلات الاستخدام: تشخيصات مجهولة لمساعدتنا في إصلاح الأعطال وتحسين الأداء.",
+    "privacy-purchase-title": "الشراء",
+    "privacy-purchase-desc": "Souti AAC تطبيق يُشترى لمرة واحدة. لا نستخدم اشتراكات متكررة أو فوترة دورية.",
+    "privacy-permissions-title": "الأذونات",
+    "privacy-permissions-1": "يتم استخدام إذن الكاميرا فقط عندما تختار التقاط صور رموز مخصصة.",
+    "privacy-permissions-2": "يتم استخدام إذن الميكروفون فقط عندما تختار تسجيل مقاطع صوتية مخصصة.",
+    "privacy-permissions-3": "يتم استخدام إذن مكتبة الصور فقط عندما تختار رفع الصور المخصصة أو حفظها.",
     "privacy-protection-title": "حماية البيانات",
     "privacy-protection-desc": "نحن لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية مع أطراف ثالثة. جميع الاتصالات بين التطبيق وخوادمنا مشفرة.",
+    "privacy-storage-title": "التخزين والاحتفاظ بالبيانات",
+    "privacy-storage-desc": "يتم تخزين الرموز والصور والتسجيلات الصوتية المخصصة في مساحة تخزين يتحكم بها التطبيق، وقد تتم مزامنتها مع بنية سحابية آمنة عند تفعيل مزامنة الحساب. تبقى البيانات حتى تقوم بحذفها من داخل التطبيق أو تطلب حذف الحساب.",
     "privacy-rights-title": "حقوق المستخدم وحذف البيانات",
     "privacy-rights-desc": "لديك سيطرة كاملة على بياناتك. سيتم نشر تفاصيل حذف الحساب والتواصل الخاص بالخصوصية هنا بعد اكتمال إعداد البريد الإلكتروني.",
     "privacy-coppa-title": "خصوصية الأطفال (COPPA)",
@@ -181,6 +197,12 @@ function applyLanguage(lang) {
     if (i18n[lang][key]) {
       el.textContent = i18n[lang][key];
     }
+  });
+
+  document.querySelectorAll('[data-caption-en][data-caption-ar]').forEach((el) => {
+    const text = lang === 'ar' ? el.getAttribute('data-caption-ar') : el.getAttribute('data-caption-en');
+    const caption = el.querySelector('.media-caption');
+    if (caption && text) caption.textContent = text;
   });
 
   // Update active state of buttons
