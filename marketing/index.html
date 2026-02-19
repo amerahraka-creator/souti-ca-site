@@ -43,8 +43,8 @@
   <script src="../i18n.js"></script>
   <script>
     const mediaAssets = [
-      { file: "1 ipad.jpg", titleEn: "iPad Communication Board", titleAr: "لوحة التواصل على الآيباد" },
-      { file: "1.1 ipad.jpg", titleEn: "iPad Full Sentence Speech", titleAr: "نطق الجمل الكاملة على الآيباد" },
+      { file: "1 ipad.jpg", titleEn: "School Folder Overview (iPad)", titleAr: "نظرة عامة على مجلد المدرسة (آيباد)" },
+      { file: "1.1 ipad.jpg", titleEn: "School Vocabulary (iPad)", titleAr: "مفردات المدرسة (آيباد)" },
       { file: "123ipad.jpg", titleEn: "iPad Category Navigation", titleAr: "التنقل بين الفئات على الآيباد" },
       { file: "1E\\A.jpg", titleEn: "Arabic and English Support", titleAr: "دعم العربية والإنجليزية" },
       { file: "1ipad.jpg", titleEn: "iPad Main Screen", titleAr: "الشاشة الرئيسية على الآيباد" },
@@ -61,7 +61,18 @@
     ];
 
     const currentLang = () => (localStorage.getItem("preferred-lang") || "en").startsWith("ar") ? "ar" : "en";
-    const captionFor = (asset) => currentLang() === "ar" ? asset.titleAr : asset.titleEn;
+    const cleanFallbackTitle = (file) => file
+      .replace(/\.[^/.]+$/, "")
+      .replace(/^[0-9.\s_-]+/, "")
+      .replace(/([a-z])([A-Z])/g, "$1 $2")
+      .replace(/[_-]+/g, " ")
+      .replace(/\bipad\b/gi, "iPad")
+      .replace(/\s+/g, " ")
+      .trim() || "Souti Media";
+    const captionFor = (asset) => {
+      const preferred = currentLang() === "ar" ? asset.titleAr : asset.titleEn;
+      return (preferred && preferred.trim()) ? preferred : cleanFallbackTitle(asset.file);
+    };
 
     const gallery = document.getElementById("media-gallery");
     mediaAssets.forEach((asset) => {
