@@ -55,12 +55,38 @@
       { file: "2ipad.jpg", titleEn: "iPad Quick Communication", titleAr: "تواصل سريع على الآيباد" },
       { file: "3ipad.jpg", titleEn: "iPad Learning Categories", titleAr: "فئات التعلم على الآيباد" },
       { file: "4ipad.jpg", titleEn: "iPad School Vocabulary", titleAr: "مفردات المدرسة على الآيباد" },
-      { file: "Souti.mov", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي" },
+      { file: "Souti.mov", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي", lang: "all" },
+      { file: "E how the app look like.mov", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "en" },
+      { file: "A how the app look like.mov", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "ar" },
+      { file: "E speak.mov", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "en" },
+      { file: "A speak.mov", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "ar" },
+      { file: "E add symbols.mov", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "en" },
+      { file: "A add symbpls.mov", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "ar" },
+      { file: "E my symbols.mov", titleEn: "My Symbols", titleAr: "رموزي", lang: "en" },
+      { file: "A my symbols.MOV", titleEn: "My Symbols", titleAr: "رموزي", lang: "ar" },
+      { file: "E search.mov", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "en" },
+      { file: "A search.MOV", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "ar" },
+      { file: "E zooming and Layout..mov", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "en" },
+      { file: "A zooming and Layout.mov", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "ar" },
       { file: "ipad speak.jpg", titleEn: "iPad Speak Action", titleAr: "زر التحدث على الآيباد" },
       { file: "phone12.jpg", titleEn: "iPhone Communication Layout", titleAr: "واجهة التواصل على الآيفون" }
     ];
 
     const currentLang = () => (localStorage.getItem("preferred-lang") || "en").startsWith("ar") ? "ar" : "en";
+    const isVideoFile = (file) => /\.(mp4|mov|webm)$/i.test(file);
+    const videoMimeType = (file) => {
+      if (/\.mp4$/i.test(file)) return "video/mp4";
+      if (/\.webm$/i.test(file)) return "video/webm";
+      return "video/quicktime";
+    };
+    const languageForVideo = (asset) => {
+      if (asset.lang) return asset.lang;
+      const name = asset.file.toLowerCase().replace(/\.[^/.]+$/, "");
+      const markers = name.split(/[^a-z0-9\u0600-\u06ff]+/).filter(Boolean);
+      if (markers.includes("a") || markers.includes("ar") || markers.includes("arabic") || /عربي|العربية/.test(name)) return "ar";
+      if (markers.includes("e") || markers.includes("en") || markers.includes("english") || /انجليزي|الإنجليزية/.test(name)) return "en";
+      return "all";
+    };
     const cleanFallbackTitle = (file) => file
       .replace(/\.[^/.]+$/, "")
       .replace(/^[0-9.\s_-]+/, "")
@@ -75,35 +101,50 @@
     };
 
     const gallery = document.getElementById("media-gallery");
-    mediaAssets.forEach((asset) => {
-      const isVideo = /\.(mp4|mov|webm)$/i.test(asset.file);
-      const title = captionFor(asset);
-      const encoded = encodeURIComponent(asset.file);
+    const shouldShowAsset = (asset) => {
+      if (!isVideoFile(asset.file)) return true;
+      const lang = languageForVideo(asset);
+      return lang === "all" || lang === currentLang();
+    };
+    const renderGallery = () => {
+      gallery.innerHTML = "";
+      mediaAssets.filter(shouldShowAsset).forEach((asset) => {
+        const isVideo = isVideoFile(asset.file);
+        const title = captionFor(asset);
+        const encoded = encodeURIComponent(asset.file);
 
-      const item = document.createElement("article");
-      item.className = "media-item";
-      item.setAttribute("data-caption-en", asset.titleEn);
-      item.setAttribute("data-caption-ar", asset.titleAr);
+        const item = document.createElement("article");
+        item.className = "media-item";
+        item.setAttribute("data-caption-en", asset.titleEn);
+        item.setAttribute("data-caption-ar", asset.titleAr);
 
-      if (isVideo) {
-        item.innerHTML = `
-          <video controls preload="metadata" playsinline>
-            <source src="../assets/media/${encoded}" type="video/quicktime" />
-            Your browser does not support the video tag.
-          </video>
-          <p class="media-caption">${title}</p>
-        `;
-      } else {
-        item.innerHTML = `
-          <img src="../assets/media/${encoded}" alt="Souti AAC commercial ${title}" loading="lazy" />
-          <p class="media-caption">${title}</p>
-        `;
-      }
+        if (isVideo) {
+          item.innerHTML = `
+            <video controls preload="metadata" playsinline>
+              <source src="../assets/media/${encoded}" type="${videoMimeType(asset.file)}" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">${title}</p>
+          `;
+        } else {
+          item.innerHTML = `
+            <img src="../assets/media/${encoded}" alt="Souti AAC commercial ${title}" loading="lazy" />
+            <p class="media-caption">${title}</p>
+          `;
+        }
 
-      gallery.appendChild(item);
-    });
+        gallery.appendChild(item);
+      });
+    };
+
+    const existingApplyLanguage = window.applyLanguage;
+    window.applyLanguage = (lang) => {
+      existingApplyLanguage(lang);
+      renderGallery();
+    };
 
     document.getElementById("year").textContent = new Date().getFullYear();
+    renderGallery();
   </script>
 </body>
 </html>
