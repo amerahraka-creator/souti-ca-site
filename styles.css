@@ -448,7 +448,7 @@ header {
 
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
@@ -473,15 +473,15 @@ html[lang="ar"] .video-card[data-video-lang="ar"] {
 }
 
 .video-card.featured {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .video-card video {
   width: 100%;
   display: block;
-  aspect-ratio: 16 / 9;
+  height: auto;
   background: var(--sand);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .video-info {
