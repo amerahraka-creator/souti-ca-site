@@ -55,19 +55,19 @@
       { file: "2ipad.jpg", titleEn: "iPad Quick Communication", titleAr: "تواصل سريع على الآيباد" },
       { file: "3ipad.jpg", titleEn: "iPad Learning Categories", titleAr: "فئات التعلم على الآيباد" },
       { file: "4ipad.jpg", titleEn: "iPad School Vocabulary", titleAr: "مفردات المدرسة على الآيباد" },
-      { file: "Souti.mov", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي", lang: "all", poster: "video-cover.png" },
-      { file: "E how the app look like.mov", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "en", poster: "video-cover.png" },
-      { file: "A how the app look like.mov", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "ar", poster: "video-cover.png" },
-      { file: "E speak.mov", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "en", poster: "video-cover.png" },
-      { file: "A speak.mov", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "ar", poster: "video-cover.png" },
-      { file: "E add symbols.mov", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "en", poster: "video-cover.png" },
-      { file: "A add symbpls.mov", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "ar", poster: "video-cover.png" },
-      { file: "E my symbols.mov", titleEn: "My Symbols", titleAr: "رموزي", lang: "en", poster: "video-cover.png" },
-      { file: "A my symbols.MOV", titleEn: "My Symbols", titleAr: "رموزي", lang: "ar", poster: "video-cover.png" },
-      { file: "E search.mov", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "en", poster: "video-cover.png" },
-      { file: "A search.MOV", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "ar", poster: "video-cover.png" },
-      { file: "E zooming and Layout..mov", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "en", poster: "video-cover.png" },
-      { file: "A zooming and Layout.mov", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "ar", poster: "video-cover.png" },
+      { file: "Souti.mp4", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي", lang: "all", poster: "video-cover.png" },
+      { file: "E how the app look like.mp4", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "en", poster: "video-cover.png" },
+      { file: "A how the app look like.mp4", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "ar", poster: "video-cover.png" },
+      { file: "E speak.mp4", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "en", poster: "video-cover.png" },
+      { file: "A speak.mp4", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "ar", poster: "video-cover.png" },
+      { file: "E add symbols.mp4", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "en", poster: "video-cover.png" },
+      { file: "A add symbpls.mp4", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "ar", poster: "video-cover.png" },
+      { file: "E my symbols.mp4", titleEn: "My Symbols", titleAr: "رموزي", lang: "en", poster: "video-cover.png" },
+      { file: "A my symbols.mp4", titleEn: "My Symbols", titleAr: "رموزي", lang: "ar", poster: "video-cover.png" },
+      { file: "E search.mp4", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "en", poster: "video-cover.png" },
+      { file: "A search.mp4", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "ar", poster: "video-cover.png" },
+      { file: "E zooming and Layout..mp4", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "en", poster: "video-cover.png" },
+      { file: "A zooming and Layout.mp4", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "ar", poster: "video-cover.png" },
       { file: "ipad speak.jpg", titleEn: "iPad Speak Action", titleAr: "زر التحدث على الآيباد" },
       { file: "phone12.jpg", titleEn: "iPhone Communication Layout", titleAr: "واجهة التواصل على الآيفون" }
     ];
@@ -77,7 +77,7 @@
     const videoMimeType = (file) => {
       if (/\.mp4$/i.test(file)) return "video/mp4";
       if (/\.webm$/i.test(file)) return "video/webm";
-      return "video/quicktime";
+      return "video/mp4";
     };
     const languageForVideo = (asset) => {
       if (asset.lang) return asset.lang;

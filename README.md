@@ -13,7 +13,7 @@ This folder is ready to deploy to GitHub Pages with custom domain `souti.ca`.
 - `support/index.html` support page
 - `privacy/index.html` privacy policy
 - `terms/index.html` terms of use
-- `assets/media/*` commercial images/videos (including iPad creatives and `Souti.mov`)
+- `assets/media/*` commercial images/videos (including iPad creatives and `Souti.mp4`)
 - `CNAME` custom domain for GitHub Pages
 
 ## Deploy steps
