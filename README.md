@@ -1,35 +1,30 @@
-# Souti GitHub Pages Site
+# Souti AAC — Redesigned site (deploy package)
 
-This folder is ready to deploy to GitHub Pages with custom domain `souti.ca`.
+Redesign of souti.ca: new home, media gallery, support (searchable FAQ), privacy, terms, and 404 pages. Bilingual EN/AR with full RTL, WCAG AA contrast, focus rings, `aria-expanded`, and `prefers-reduced-motion` support.
 
-## App Store URLs
-- Support URL: `https://souti.ca/support/`
-- Marketing URL: `https://souti.ca/marketing/`
-- Privacy Policy URL: `https://souti.ca/privacy/`
+## Contents
 
-## Structure
-- `index.html` main marketing website
-- `marketing/index.html` commercial material landing page
-- `support/index.html` support page
-- `privacy/index.html` privacy policy
-- `terms/index.html` terms of use
-- `assets/media/*` commercial images/videos (including iPad creatives and `Souti.mp4`)
-- `CNAME` custom domain for GitHub Pages
+```
+index.html              → replaces repo root index.html
+marketing/index.html    → replaces marketing/index.html
+support/index.html      → replaces support/index.html
+privacy/index.html      → replaces privacy/index.html
+terms/index.html        → replaces terms/index.html
+404.html                → replaces 404.html
+styles.css              → replaces styles.css  (full rewrite, new class names)
+site.js                 → NEW shared file (i18n dictionary + FAQ/media/lang behaviors)
+```
 
-## Deploy steps
-1. Create a new GitHub repo (for example: `souti-site`).
-2. Copy all files in this folder into that repo.
-3. Push to `main`.
-4. In GitHub repo settings, enable Pages from branch `main` (root).
-5. In your DNS provider, point `souti.ca` to GitHub Pages:
-   - `A` records for apex domain:
-     - `185.199.108.153`
-     - `185.199.109.153`
-     - `185.199.110.153`
-     - `185.199.111.153`
-   - `CNAME` for `www` to `<your-github-username>.github.io`
-6. Wait for DNS propagation and verify `https://souti.ca`.
+## Deploy instructions (for the repo amerahraka-creator/souti-ca-site)
+
+1. Copy every file in this folder into the repo root, preserving folder structure. Overwrite existing files.
+2. `site.js` is new — add it at the repo root (all pages load `/site.js`).
+3. The old `i18n.js` is no longer referenced by these pages; it can stay (harmless) or be deleted.
+4. Assets are NOT included — pages reference the repo's existing `/assets/media/*` files by absolute path. Do not move the assets folder.
+5. Commit and push to `main`; GitHub Pages will redeploy.
 
 ## Notes
-- Replace placeholder links like App Store URL with your live app link.
-- If you add new files, append filenames to `mediaAssets` in `marketing/index.html`.
+
+- Video links point to `/assets/media/<name>.mp4` exactly as named in the repo (including `A add symbpls.mp4` and `E zooming and Layout..mp4` typos). If those filenames are ever cleaned up, update the `data-href-en` / `data-href-ar` attributes in `index.html` and `marketing/index.html`.
+- Language preference persists via `localStorage("preferred-lang")` — same key the old site used.
+- Recommended follow-up: compress the JPGs in `assets/media/` (currently 0.8–1.5 MB each) to ≤200 KB.

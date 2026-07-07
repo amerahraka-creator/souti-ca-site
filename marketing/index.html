@@ -1,151 +1,150 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Souti AAC | Marketing</title>
-  <meta name="description" content="Official commercial and marketing material for Souti AAC." />
-  <link rel="canonical" href="https://souti.ca/marketing/" />
-  <link rel="stylesheet" href="../styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media — Souti AAC</title>
+<meta name="description" content="Screenshots and tutorial videos of Souti AAC — for families, therapists, and reviewers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Souti<span>.ca</span></div>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <div class="lang-switch">
-          <button onclick="applyLanguage('en')">English</button>
-          <button onclick="applyLanguage('ar')">العربية</button>
-        </div>
-        <nav class="nav-links">
-          <a href="/" data-i18n="nav-home">Home</a>
-          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
-          <a href="/support/" data-i18n="nav-support">Support</a>
-          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
-          <a href="/terms/" data-i18n="nav-terms">Terms</a>
-        </nav>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">Souti<span> AAC</span></a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" type="button">English</button>
+        <button class="lang-btn" data-lang="ar" type="button">العربية</button>
       </div>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/" data-t="navHome">Home</a>
+        <a href="/marketing/" class="current" data-t="navMedia">Media</a>
+        <a href="/support/" data-t="navSupport">Support</a>
+      </nav>
+      <a class="btn-primary" href="https://apps.apple.com/us/app/soutiaac/id6757438376" target="_blank" rel="noopener" data-t="navDownload">Download</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="page-hero">
-      <h1 data-i18n="marketing-title">Marketing Material</h1>
-      <p class="lead" data-i18n="marketing-lead">Commercial visuals for Souti AAC. This page includes all images and videos currently in <code>/assets/media/</code>.</p>
-    </section>
+<section class="media-hero wrap">
+  <div class="blob" style="top:0;inset-inline-end:-40px;width:130px;height:130px;background:#e0f0ee"></div>
+  <span class="badge fade-1" data-t="mBadge">Media Gallery</span>
+  <h1 class="serif page-title fade-2" style="margin:20px 0 14px" data-t="mTitle">See Souti AAC in action</h1>
+  <p class="lead fade-3" style="max-width:580px" data-t="mLead">Real screenshots and tutorial videos of the app — for families, therapists, and reviewers.</p>
+</section>
 
-    <section class="media" id="media-gallery"></section>
-  </main>
+<section class="wrap" style="padding-top:20px">
+  <div class="media-chips">
+    <button class="media-chip active" data-kind="all" type="button" data-t="chipAll">All</button>
+    <button class="media-chip" data-kind="shot" type="button" data-t="chipShots">Screenshots</button>
+    <button class="media-chip" data-kind="video" type="button" data-t="chipVideos">Videos</button>
+  </div>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights"></span></div>
-  </footer>
-  <script src="../i18n.js?v=20260219a"></script>
-  <script>
-    const mediaAssets = [
-      { file: "1 ipad.jpg", titleEn: "School Folder Overview (iPad)", titleAr: "نظرة عامة على مجلد المدرسة (آيباد)" },
-      { file: "1.1 ipad.jpg", titleEn: "School Vocabulary (iPad)", titleAr: "مفردات المدرسة (آيباد)" },
-      { file: "123ipad.jpg", titleEn: "iPad Category Navigation", titleAr: "التنقل بين الفئات على الآيباد" },
-      { file: "1E\\A.jpg", titleEn: "Arabic and English Support", titleAr: "دعم العربية والإنجليزية" },
-      { file: "1ipad.jpg", titleEn: "iPad Main Screen", titleAr: "الشاشة الرئيسية على الآيباد" },
-      { file: "1reorder.jpg", titleEn: "Reorder Symbols", titleAr: "إعادة ترتيب الرموز" },
-      { file: "1speak.jpg", titleEn: "Tap Speak Feature", titleAr: "ميزة اضغط للتحدث" },
-      { file: "1take pic.jpg", titleEn: "Add Custom Pictures and Voices", titleAr: "إضافة صور وأصوات مخصصة" },
-      { file: "1zoom.jpg", titleEn: "Zoom for Accessibility", titleAr: "تكبير لسهولة الوصول" },
-      { file: "2ipad.jpg", titleEn: "iPad Quick Communication", titleAr: "تواصل سريع على الآيباد" },
-      { file: "3ipad.jpg", titleEn: "iPad Learning Categories", titleAr: "فئات التعلم على الآيباد" },
-      { file: "4ipad.jpg", titleEn: "iPad School Vocabulary", titleAr: "مفردات المدرسة على الآيباد" },
-      { file: "Souti.mp4", titleEn: "Souti App Video Demo", titleAr: "فيديو عرض تطبيق صوتي", lang: "all", poster: "video-cover.png" },
-      { file: "E how the app look like.mp4", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "en", poster: "video-cover.png" },
-      { file: "A how the app look like.mp4", titleEn: "How the App Looks", titleAr: "شكل التطبيق", lang: "ar", poster: "video-cover.png" },
-      { file: "E speak.mp4", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "en", poster: "video-cover.png" },
-      { file: "A speak.mp4", titleEn: "Speak Full Sentences", titleAr: "نطق الجمل الكاملة", lang: "ar", poster: "video-cover.png" },
-      { file: "E add symbols.mp4", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "en", poster: "video-cover.png" },
-      { file: "A add symbpls.mp4", titleEn: "Add Custom Symbols", titleAr: "إضافة رموز مخصصة", lang: "ar", poster: "video-cover.png" },
-      { file: "E my symbols.mp4", titleEn: "My Symbols", titleAr: "رموزي", lang: "en", poster: "video-cover.png" },
-      { file: "A my symbols.mp4", titleEn: "My Symbols", titleAr: "رموزي", lang: "ar", poster: "video-cover.png" },
-      { file: "E search.mp4", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "en", poster: "video-cover.png" },
-      { file: "A search.mp4", titleEn: "Search Symbols", titleAr: "البحث عن الرموز", lang: "ar", poster: "video-cover.png" },
-      { file: "E zooming and Layout..mp4", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "en", poster: "video-cover.png" },
-      { file: "A zooming and Layout.mp4", titleEn: "Zoom and Layout", titleAr: "التكبير وتخطيط الرموز", lang: "ar", poster: "video-cover.png" },
-      { file: "ipad speak.jpg", titleEn: "iPad Speak Action", titleAr: "زر التحدث على الآيباد" },
-      { file: "phone12.jpg", titleEn: "iPhone Communication Layout", titleAr: "واجهة التواصل على الآيفون" }
-    ];
+  <div class="media-grid">
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1 ipad.jpg" alt="School folder overview on iPad" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m1">School Folder Overview (iPad)</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1.1 ipad.jpg" alt="School vocabulary on iPad" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m2">School Vocabulary (iPad)</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/123ipad.jpg" alt="Category navigation on iPad" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m3">iPad Category Navigation</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1speak.jpg" alt="Tap Speak feature" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m4">Tap Speak Feature</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1take pic.jpg" alt="Add custom pictures and voices" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m5">Add Custom Pictures and Voices</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1reorder.jpg" alt="Reorder symbols" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m6">Reorder Symbols</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/1zoom.jpg" alt="Zoom for accessibility" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m7">Zoom for Accessibility</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/2ipad.jpg" alt="Quick communication on iPad" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m8">iPad Quick Communication</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="shot">
+      <div class="media-thumb"><img src="/assets/media/phone12.jpg" alt="iPhone communication layout" loading="lazy"></div>
+      <div class="media-meta"><p data-t="m9">iPhone Communication Layout</p><span class="media-tag shot" data-t="tagShot">Screenshot</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/Souti.mp4" data-href-en="/assets/media/Souti.mp4" data-href-ar="/assets/media/Souti.mp4" aria-label="Play: Souti App Video Demo"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v1">Souti App Video Demo</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E how the app look like.mp4" data-href-en="/assets/media/E how the app look like.mp4" data-href-ar="/assets/media/A how the app look like.mp4" aria-label="Play: How the App Looks"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v2">How the App Looks</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E speak.mp4" data-href-en="/assets/media/E speak.mp4" data-href-ar="/assets/media/A speak.mp4" aria-label="Play: Speak Full Sentences"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v3">Speak Full Sentences</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E add symbols.mp4" data-href-en="/assets/media/E add symbols.mp4" data-href-ar="/assets/media/A add symbpls.mp4" aria-label="Play: Add Custom Symbols"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v4">Add Custom Symbols</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E my symbols.mp4" data-href-en="/assets/media/E my symbols.mp4" data-href-ar="/assets/media/A my symbols.mp4" aria-label="Play: My Symbols"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v5">My Symbols</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E search.mp4" data-href-en="/assets/media/E search.mp4" data-href-ar="/assets/media/A search.mp4" aria-label="Play: Search Symbols"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v6">Search Symbols</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+    <div class="media-card" data-kind="video">
+      <div class="media-thumb">
+        <img src="/assets/media/video-cover.png" alt="" loading="lazy">
+        <a class="video-overlay" href="/assets/media/E zooming and Layout..mp4" data-href-en="/assets/media/E zooming and Layout..mp4" data-href-ar="/assets/media/A zooming and Layout.mp4" aria-label="Play: Zoom and Layout"><span class="play-btn"></span></a>
+      </div>
+      <div class="media-meta"><p data-t="v7">Zoom and Layout</p><span class="media-tag video" data-t="tagVideo">Video</span></div>
+    </div>
+  </div>
+</section>
 
-    const currentLang = () => (localStorage.getItem("preferred-lang") || "en").startsWith("ar") ? "ar" : "en";
-    const isVideoFile = (file) => /\.(mp4|mov|webm)$/i.test(file);
-    const videoMimeType = (file) => {
-      if (/\.mp4$/i.test(file)) return "video/mp4";
-      if (/\.webm$/i.test(file)) return "video/webm";
-      return "video/mp4";
-    };
-    const languageForVideo = (asset) => {
-      if (asset.lang) return asset.lang;
-      const name = asset.file.toLowerCase().replace(/\.[^/.]+$/, "");
-      const markers = name.split(/[^a-z0-9\u0600-\u06ff]+/).filter(Boolean);
-      if (markers.includes("a") || markers.includes("ar") || markers.includes("arabic") || /عربي|العربية/.test(name)) return "ar";
-      if (markers.includes("e") || markers.includes("en") || markers.includes("english") || /انجليزي|الإنجليزية/.test(name)) return "en";
-      return "all";
-    };
-    const cleanFallbackTitle = (file) => file
-      .replace(/\.[^/.]+$/, "")
-      .replace(/^[0-9.\s_-]+/, "")
-      .replace(/([a-z])([A-Z])/g, "$1 $2")
-      .replace(/[_-]+/g, " ")
-      .replace(/\bipad\b/gi, "iPad")
-      .replace(/\s+/g, " ")
-      .trim() || "Souti Media";
-    const captionFor = (asset) => {
-      const preferred = currentLang() === "ar" ? asset.titleAr : asset.titleEn;
-      return (preferred && preferred.trim()) ? preferred : cleanFallbackTitle(asset.file);
-    };
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">Souti AAC</div>
+    <div class="footer-links">
+      <a href="/support/" data-t="navSupport">Support</a>
+      <a href="/privacy/" data-t="navPrivacy">Privacy</a>
+      <a href="/terms/" data-t="navTerms">Terms</a>
+    </div>
+    <p class="footer-copy">© <span id="year">2026</span> Souti AAC. <span data-t="footerRights">All rights reserved.</span></p>
+  </div>
+</footer>
 
-    const gallery = document.getElementById("media-gallery");
-    const shouldShowAsset = (asset) => {
-      if (!isVideoFile(asset.file)) return true;
-      const lang = languageForVideo(asset);
-      return lang === "all" || lang === currentLang();
-    };
-    const renderGallery = () => {
-      gallery.innerHTML = "";
-      mediaAssets.filter(shouldShowAsset).forEach((asset) => {
-      const isVideo = isVideoFile(asset.file);
-      const title = captionFor(asset);
-      const encoded = encodeURIComponent(asset.file);
-      const poster = asset.poster ? ` poster="../assets/media/${encodeURIComponent(asset.poster)}"` : "";
-
-        const item = document.createElement("article");
-        item.className = "media-item";
-        item.setAttribute("data-caption-en", asset.titleEn);
-        item.setAttribute("data-caption-ar", asset.titleAr);
-
-        if (isVideo) {
-          item.innerHTML = `
-          <video controls preload="metadata" playsinline${poster}>
-            <source src="../assets/media/${encoded}" type="${videoMimeType(asset.file)}" />
-            Your browser does not support the video tag.
-          </video>
-            <p class="media-caption">${title}</p>
-          `;
-        } else {
-          item.innerHTML = `
-            <img src="../assets/media/${encoded}" alt="Souti AAC commercial ${title}" loading="lazy" />
-            <p class="media-caption">${title}</p>
-          `;
-        }
-
-        gallery.appendChild(item);
-      });
-    };
-
-    const existingApplyLanguage = window.applyLanguage;
-    window.applyLanguage = (lang) => {
-      existingApplyLanguage(lang);
-      renderGallery();
-    };
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    renderGallery();
-  </script>
+<script src="/site.js"></script>
 </body>
 </html>

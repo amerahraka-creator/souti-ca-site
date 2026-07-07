@@ -1,51 +1,79 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Souti AAC | Terms of Use</title>
-  <meta name="description" content="Terms of use for Souti AAC." />
-  <link rel="canonical" href="https://souti.ca/terms/" />
-  <link rel="stylesheet" href="../styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — Souti AAC</title>
+<meta name="description" content="Terms of use for Souti AAC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Souti<span>.ca</span></div>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <div class="lang-switch">
-          <button onclick="applyLanguage('en')">English</button>
-          <button onclick="applyLanguage('ar')">العربية</button>
-        </div>
-        <nav class="nav-links">
-          <a href="/" data-i18n="nav-home">Home</a>
-          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
-          <a href="/support/" data-i18n="nav-support">Support</a>
-          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
-          <a href="/terms/" data-i18n="nav-terms">Terms</a>
-        </nav>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">Souti<span> AAC</span></a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" type="button">English</button>
+        <button class="lang-btn" data-lang="ar" type="button">العربية</button>
       </div>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/" data-t="navHome">Home</a>
+        <a href="/marketing/" data-t="navMedia">Media</a>
+        <a href="/support/" data-t="navSupport">Support</a>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="page-hero">
-      <h1 data-i18n="terms-title">Terms of Use</h1>
-      <p class="lead" data-i18n="terms-lead">By using Souti AAC, you agree to these terms.</p>
-    </section>
+<section class="legal-wrap legal-hero">
+  <span class="badge fade-1" data-t="tBadge">Terms of Use</span>
+  <h1 class="serif page-title fade-2" style="margin:20px 0 12px" data-t="tTitle">Simple, fair terms</h1>
+  <p class="lead fade-3" style="font-size:16px;max-width:560px" data-t="tLead">By downloading or using Souti AAC, you agree to the following terms.</p>
+</section>
 
-    <section class="list">
-      <p data-i18n="terms-usage-1">Souti AAC is provided for communication and educational support.</p>
-      <p data-i18n="terms-usage-2">You are responsible for the content you upload (images, audio, custom symbols).</p>
-      <p data-i18n="terms-usage-3">Do not use the app for unlawful activities.</p>
-      <p data-i18n="terms-usage-4">We may update these terms; continued use means acceptance of updates.</p>
-      <p data-i18n="terms-contact-note">Legal contact details will be published here after mailbox setup is complete.</p>
-    </section>
-  </main>
+<section class="legal-wrap legal-sections" style="padding-top:32px">
+  <div class="card legal-card numbered">
+    <div class="num">1</div>
+    <div><h2 data-t="t1t">Purpose</h2><p data-t="t1d">Souti AAC is provided for communication and educational support. It is a tool to assist expression — it is not a medical device and does not replace professional therapy or medical advice.</p></div>
+  </div>
+  <div class="card legal-card numbered">
+    <div class="num">2</div>
+    <div><h2 data-t="t2t">Your Content</h2><p data-t="t2d">You are responsible for the content you upload into the app — images, audio recordings, and custom symbols. All such content stays on your device.</p></div>
+  </div>
+  <div class="card legal-card numbered">
+    <div class="num">3</div>
+    <div><h2 data-t="t3t">Acceptable Use</h2><p data-t="t3d">Do not use the app for unlawful activities or to create content that infringes the rights of others.</p></div>
+  </div>
+  <div class="card legal-card numbered">
+    <div class="num">4</div>
+    <div><h2 data-t="t4t">Purchases</h2><p data-t="t4d">Souti AAC is a one-time purchase handled by Apple through the App Store. Refunds follow Apple's standard App Store refund policies.</p></div>
+  </div>
+  <div class="card legal-card numbered">
+    <div class="num">5</div>
+    <div><h2 data-t="t5t">Updates to These Terms</h2><p data-t="t5d">We may update these terms from time to time; continued use of the app means acceptance of the updated terms. Significant changes will be reflected on this page.</p></div>
+  </div>
+  <div class="contact-card">
+    <h2 data-t="tContactTitle">Questions about these terms?</h2>
+    <p data-t="tContactBody">Contact us and we'll be happy to clarify anything:</p>
+    <a class="btn-primary" href="mailto:support@souti.ca">support@souti.ca</a>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights"></span></div>
-  </footer>
-  <script src="../i18n.js?v=20260219a"></script>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">Souti AAC</div>
+    <div class="footer-links">
+      <a href="/support/" data-t="navSupport">Support</a>
+      <a href="/privacy/" data-t="navPrivacy">Privacy</a>
+    </div>
+    <p class="footer-copy">© <span id="year">2026</span> Souti AAC. <span data-t="footerRights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
 </body>
 </html>

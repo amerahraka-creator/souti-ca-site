@@ -1,252 +1,178 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Souti AAC | Arabic & English Communication App</title>
-  <meta name="description" content="Souti AAC helps children communicate with pictures and voice in Arabic and English." />
-  <link rel="canonical" href="https://souti.ca/" />
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Souti AAC — Every child deserves a voice in their language</title>
+<meta name="description" content="Souti AAC helps children build full sentences and communicate clearly in Arabic and English. Offline, one-time purchase, private by design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
-<body class="home-page">
-  <header>
-    <div class="site-nav">
-      <a href="/" class="logo">Souti<span> AAC</span></a>
-      <div class="nav-right">
-        <div class="lang-switch" aria-label="Language selector">
-          <button onclick="applyLanguage('en')" id="btn-en">English</button>
-          <button onclick="applyLanguage('ar')" id="btn-ar">العربية</button>
-        </div>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="/" data-i18n="nav-home">Home</a>
-          <a href="#videos" data-i18n="nav-videos">Videos</a>
-          <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
-          <a href="/support/" data-i18n="nav-support">Support</a>
-          <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
-        </nav>
-        <a class="nav-cta" href="https://apps.apple.com/us/app/soutiaac/id6757438376" target="_blank" rel="noopener" data-i18n="cta-download">Download</a>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">Souti<span> AAC</span></a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" type="button">English</button>
+        <button class="lang-btn" data-lang="ar" type="button">العربية</button>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#features" data-t="navFeatures">Features</a>
+        <a href="/marketing/" data-t="navMedia">Media</a>
+        <a href="/support/" data-t="navSupport">Support</a>
+      </nav>
+      <a class="btn-primary" href="https://apps.apple.com/us/app/soutiaac/id6757438376" target="_blank" rel="noopener" data-t="navDownload">Download</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="blob" style="top:-90px;inset-inline-end:-70px;width:340px;height:340px;background:#fae8e0;opacity:.8"></div>
+  <div class="blob" style="bottom:-60px;inset-inline-start:-80px;width:260px;height:260px;background:#e0f0ee;opacity:.85"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge fade-1" data-t="heroBadge">AAC for Arabic + English</span>
+      <h1 class="serif fade-2" data-t="heroTitle">Every child deserves a voice in their language</h1>
+      <p class="lead fade-3" data-t="heroLead">Souti AAC helps children build full sentences, learn vocabulary, and communicate clearly using symbols, custom audio, and child-friendly layouts — in Arabic and English.</p>
+      <div class="hero-ctas fade-4">
+        <a class="btn-primary lg" href="https://apps.apple.com/us/app/soutiaac/id6757438376" target="_blank" rel="noopener" data-t="ctaDownload">Download on the App Store</a>
+        <a class="btn-secondary" href="#videos" data-t="ctaWatch">Watch tutorials</a>
       </div>
     </div>
-  </header>
+    <div class="hero-media fade-4">
+      <div class="blob float-a" style="top:-24px;inset-inline-end:6px;width:88px;height:88px;background:#fae8e0"></div>
+      <div class="blob float-b" style="bottom:-14px;inset-inline-start:-4px;width:62px;height:62px;background:#e0f0ee"></div>
+      <img src="/assets/media/1 ipad.jpg" alt="Souti AAC app on iPad showing bilingual symbol grid" width="440">
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section class="hero">
+<section class="trust-strip">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><strong data-t="trust1t">Works offline</strong><small data-t="trust1d">No connection needed</small></div>
+    <div class="trust-item"><strong data-t="trust2t">One-time purchase</strong><small data-t="trust2d">No subscriptions</small></div>
+    <div class="trust-item"><strong data-t="trust3t">Arabic &amp; English</strong><small data-t="trust3d">Fully bilingual</small></div>
+    <div class="trust-item"><strong data-t="trust4t">iPhone &amp; iPad</strong><small data-t="trust4d">Designed for both</small></div>
+    <div class="trust-item"><strong data-t="trust5t">Private by design</strong><small data-t="trust5d">Data stays on device</small></div>
+  </div>
+</section>
+
+<section id="features" class="features wrap">
+  <div class="kicker" data-t="featKicker">Features</div>
+  <h2 class="serif section-title" data-t="featTitle">Built for daily communication</h2>
+  <p class="lead" style="max-width:540px;margin-top:12px" data-t="featLead">A practical AAC tool for home, school, therapy, and real conversations.</p>
+
+  <div class="feature-rows">
+    <div class="feature-row">
       <div>
-        <div class="hero-badge fade-up" data-i18n="hero-badge">AAC for Arabic + English</div>
-        <h1 class="fade-up fade-up-d1" data-i18n="hero-title">Every child deserves a voice in their language</h1>
-        <p class="fade-up fade-up-d2" data-i18n="hero-lead">Souti AAC helps children build full sentences, learn vocabulary, and communicate clearly using symbols, custom audio, and child-friendly layouts.</p>
-        <div class="hero-actions fade-up fade-up-d3">
-          <a href="https://apps.apple.com/us/app/soutiaac/id6757438376" class="btn-primary" target="_blank" rel="noopener" data-i18n="cta-download">Download on App Store</a>
-          <a href="#videos" class="btn-ghost" data-i18n="cta-watch">Watch Tutorials</a>
-        </div>
+        <span class="pill teal" data-t="f1pill">Voice</span>
+        <h3 data-t="f1t">Speak full sentences</h3>
+        <p data-t="f1d">Tap symbols to build a sentence, then press Speak to pronounce it completely — in Arabic or English. Children express whole thoughts, not single words.</p>
       </div>
-      <div class="hero-visual fade-up fade-up-d4">
-        <div class="img-accent-1"></div>
-        <div class="img-accent-2"></div>
-        <div class="app-img-wrap">
-          <img src="assets/media/1%20ipad.jpg" alt="Souti AAC app running on iPad showing bilingual symbol grid" />
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Souti AAC highlights">
-      <div class="trust-item"><span class="trust-dot"></span><span data-i18n="trust-1">Designed for AAC needs</span></div>
-      <div class="trust-item"><span class="trust-dot"></span><span data-i18n="trust-2">Arabic and English</span></div>
-      <div class="trust-item"><span class="trust-dot"></span><span data-i18n="trust-3">iPhone and iPad</span></div>
-      <div class="trust-item"><span class="trust-dot"></span><span data-i18n="trust-4">Works offline</span></div>
-      <div class="trust-item"><span class="trust-dot"></span><span data-i18n="trust-5">One-time purchase</span></div>
-    </section>
-
-    <section class="section">
-      <div class="section-label" data-i18n="features-kicker">Features</div>
-      <h2 class="section-title" data-i18n="features-title">Built for daily communication</h2>
-      <p class="section-sub" data-i18n="features-lead">A practical AAC tool for home, school, therapy, and real conversations.</p>
-
-      <div class="features-grid">
-        <article class="feat">
-          <div class="feat-icon">Voice</div>
-          <h3 data-i18n="feature-1-title">Full Sentence Speech</h3>
-          <p data-i18n="feature-1-desc">Tap symbols, then press Speak to pronounce complete Arabic or English sentences.</p>
-        </article>
-        <article class="feat">
-          <div class="feat-icon">Photo</div>
-          <h3 data-i18n="feature-3-title">Custom Media</h3>
-          <p data-i18n="feature-3-desc">Add your own pictures and record custom voice clips for personalized symbols.</p>
-        </article>
-        <article class="feat">
-          <div class="feat-icon">Order</div>
-          <h3 data-i18n="feature-2-title">Drag to Reorder</h3>
-          <p data-i18n="feature-2-desc">Rearrange symbols to match each child’s needs and communication style.</p>
-        </article>
-        <article class="feat">
-          <div class="feat-icon">Zoom</div>
-          <h3 data-i18n="feature-4-title">Zoom & Accessibility</h3>
-          <p data-i18n="feature-4-desc">Zoom symbols for easier tapping and better visibility on iPhone and iPad.</p>
-        </article>
-        <article class="feat">
-          <div class="feat-icon">School</div>
-          <h3 data-i18n="feature-6-title">School Vocabulary</h3>
-          <p data-i18n="feature-6-desc">Structured school categories support practical learning and classroom expression.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="videos-section" id="videos">
-      <div class="videos-inner">
-        <div class="section-label" data-i18n="videos-kicker">How-to Videos</div>
-        <h2 class="section-title" data-i18n="videos-title">Learn the app with short tutorials</h2>
-        <p class="section-sub" data-i18n="videos-lead">Watch the English or Arabic version directly on this page. Switch language to see the matching set.</p>
-
-        <div class="videos-grid">
-          <article class="video-card featured" data-video-lang="en">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/E%20how%20the%20app%20look%20like.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num" data-i18n="video-start-label">Start here</div>
-              <div class="video-title" data-i18n="video-start-title">How the App Looks</div>
-              <div class="video-desc" data-i18n="video-start-desc">A quick walkthrough of the main communication screen and layout.</div>
-            </div>
-          </article>
-          <article class="video-card featured" data-video-lang="ar">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/A%20how%20the%20app%20look%20like.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num" data-i18n="video-start-label">Start here</div>
-              <div class="video-title" data-i18n="video-start-title">How the App Looks</div>
-              <div class="video-desc" data-i18n="video-start-desc">A quick walkthrough of the main communication screen and layout.</div>
-            </div>
-          </article>
-
-          <article class="video-card" data-video-lang="en">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/E%20speak.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 02</div>
-              <div class="video-title" data-i18n="video-speak-title">Speak Full Sentences</div>
-            </div>
-          </article>
-          <article class="video-card" data-video-lang="ar">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/A%20speak.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 02</div>
-              <div class="video-title" data-i18n="video-speak-title">Speak Full Sentences</div>
-            </div>
-          </article>
-          <article class="video-card" data-video-lang="en">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/E%20add%20symbols.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 03</div>
-              <div class="video-title" data-i18n="video-symbols-title">Add Custom Symbols</div>
-            </div>
-          </article>
-          <article class="video-card" data-video-lang="ar">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/A%20add%20symbpls.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 03</div>
-              <div class="video-title" data-i18n="video-symbols-title">Add Custom Symbols</div>
-            </div>
-          </article>
-          <article class="video-card" data-video-lang="en">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/E%20zooming%20and%20Layout..mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 04</div>
-              <div class="video-title" data-i18n="video-layout-title">Zoom and Layout</div>
-            </div>
-          </article>
-          <article class="video-card" data-video-lang="ar">
-            <video controls preload="metadata" playsinline poster="assets/media/video-cover.png">
-              <source src="assets/media/A%20zooming%20and%20Layout.mp4" type="video/mp4" />
-            </video>
-            <div class="video-info">
-              <div class="video-num">Tutorial 04</div>
-              <div class="video-title" data-i18n="video-layout-title">Zoom and Layout</div>
-            </div>
-          </article>
-        </div>
-
-        <div class="videos-cta">
-          <a href="/marketing/" data-i18n="videos-all-link">View all marketing media</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="bilingual-section">
-      <div class="bilingual-inner">
-        <div>
-          <div class="section-label" data-i18n="bilingual-kicker">Bilingual by design</div>
-          <h2 class="section-title" data-i18n="bilingual-title">Arabic and English together</h2>
-          <p class="section-sub" data-i18n="bilingual-lead">Switch between languages across communication categories while keeping the same familiar symbol system.</p>
-        </div>
-        <div class="lang-cards">
-          <div class="lang-card en">
-            <div class="lang-flag">EN</div>
-            <div>
-              <h4>English</h4>
-              <p>I want to go home</p>
-            </div>
-          </div>
-          <div class="lang-card ar">
-            <div>
-              <h4>العربية</h4>
-              <p>أريد أن أذهب إلى البيت</p>
-            </div>
-            <div class="lang-flag">AR</div>
-          </div>
-          <div class="lang-note">Both languages · Same symbols · One app</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section resource-section">
-      <div class="section-label" data-i18n="resources-kicker">Helpful Links</div>
-      <h2 class="section-title" data-i18n="resources-title">Everything families and reviewers need</h2>
-      <p class="section-sub" data-i18n="resources-lead">Quick access to videos, support, privacy details, and App Store review information.</p>
-      <div class="resource-grid">
-        <a href="/marketing/" class="resource-card">
-          <h3 data-i18n="nav-marketing">Marketing</h3>
-          <p data-i18n="review-marketing-desc">Commercial media and app demonstrations.</p>
-        </a>
-        <a href="/support/" class="resource-card">
-          <h3 data-i18n="nav-support">Support</h3>
-          <p data-i18n="review-support-desc">Contact information and user assistance.</p>
-        </a>
-        <a href="/privacy/" class="resource-card">
-          <h3 data-i18n="nav-privacy">Privacy</h3>
-          <p data-i18n="review-privacy-desc">Data handling and user protection details.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <h2 data-i18n="final-title">Ready to help communication feel easier?</h2>
-      <p data-i18n="final-lead">Download Souti AAC from the App Store and start building personalized communication today.</p>
-      <a href="https://apps.apple.com/us/app/soutiaac/id6757438376" class="btn-white" target="_blank" rel="noopener" data-i18n="cta-download">Download on App Store</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-logo">Souti AAC</div>
-    <div class="footer-links">
-      <a href="#videos" data-i18n="nav-videos">Videos</a>
-      <a href="/marketing/" data-i18n="nav-marketing">Marketing</a>
-      <a href="/support/" data-i18n="nav-support">Support</a>
-      <a href="/privacy/" data-i18n="nav-privacy">Privacy</a>
-      <a href="/terms/" data-i18n="nav-terms">Terms</a>
+      <div class="feature-shot"><img src="/assets/media/1speak.jpg" alt="Tap Speak feature in Souti AAC" loading="lazy"></div>
     </div>
-    <p class="footer-copy">© <span id="year"></span> Souti AAC. <span data-i18n="footer-rights">All rights reserved.</span></p>
-  </footer>
+    <div class="feature-row reverse">
+      <div>
+        <span class="pill peach" data-t="f2pill">Personal</span>
+        <h3 data-t="f2t">Your photos, your voice</h3>
+        <p data-t="f2d">Add your own pictures and record custom voice clips for personalized symbols. Familiar faces and voices make communication natural and meaningful.</p>
+      </div>
+      <div class="feature-shot"><img src="/assets/media/1take pic.jpg" alt="Adding custom pictures and voices in Souti AAC" loading="lazy"></div>
+    </div>
+    <div class="feature-row">
+      <div>
+        <span class="pill teal" data-t="f3pill">Accessibility</span>
+        <h3 data-t="f3t">Zoom, reorder, adapt</h3>
+        <p data-t="f3d">Zoom symbols for easier tapping, drag to reorder them to match each child's needs, and adjust layouts for iPhone or iPad. The app adapts to the child — not the other way around.</p>
+      </div>
+      <div class="feature-shot"><img src="/assets/media/1zoom.jpg" alt="Zoom accessibility feature in Souti AAC" loading="lazy"></div>
+    </div>
+    <div class="feature-row reverse">
+      <div>
+        <span class="pill peach" data-t="f4pill">School</span>
+        <h3 data-t="f4t">School vocabulary built in</h3>
+        <p data-t="f4d">Structured school categories — subjects, supplies, places, numbers, both alphabets — support practical learning and classroom expression.</p>
+      </div>
+      <div class="feature-shot"><img src="/assets/media/1.1 ipad.jpg" alt="School vocabulary categories in Souti AAC on iPad" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
-  <script src="./i18n.js?v=20260606a"></script>
+<section class="bilingual wrap">
+  <div class="bilingual-card">
+    <div>
+      <div class="kicker" data-t="biKicker">Bilingual by design</div>
+      <h2 class="serif section-title" data-t="biTitle">Arabic and English together</h2>
+      <p class="lead" style="font-size:15.5px;max-width:420px;margin-top:12px" data-t="biLead">Switch between languages across communication categories while keeping the same familiar symbol system.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="bi-sample en" dir="ltr">
+        <span class="bi-lang">EN</span>
+        <div><div class="bi-label">English</div><div class="bi-text serif" style="font-weight:300">I want to go home</div></div>
+      </div>
+      <div class="bi-sample ar" dir="rtl">
+        <span class="bi-lang">AR</span>
+        <div><div class="bi-label">العربية</div><div class="bi-text" style="font-family:'Cairo',sans-serif;font-weight:600">أريد أن أذهب إلى البيت</div></div>
+      </div>
+      <div class="bi-note" data-t="biNote">Both languages · Same symbols · One app</div>
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="videos-section">
+  <div class="wrap videos-inner">
+    <div class="kicker light" data-t="vidKicker">How-to videos</div>
+    <h2 class="serif section-title" data-t="vidTitle">Learn the app with short tutorials</h2>
+    <p class="lead" style="max-width:520px;margin-top:12px" data-t="vidLead">Quick walkthroughs in English and Arabic — from the first tap to custom symbols.</p>
+    <div class="video-grid">
+      <a class="video-feature" data-href-en="/assets/media/E how the app look like.mp4" data-href-ar="/assets/media/A how the app look like.mp4" href="/assets/media/E how the app look like.mp4">
+        <img src="/assets/media/video-cover.png" alt="How the App Looks — video tutorial">
+        <div class="video-overlay">
+          <div>
+            <span class="play-btn"></span>
+            <div class="video-feature-label" data-t="vidFeatLabel">Start here</div>
+            <div class="video-feature-title" data-t="vidFeatTitle">How the App Looks</div>
+          </div>
+        </div>
+      </a>
+      <div class="video-list">
+        <a class="video-item" data-href-en="/assets/media/E speak.mp4" data-href-ar="/assets/media/A speak.mp4" href="/assets/media/E speak.mp4"><span class="num">02</span><span class="label" data-t="tut1">Speak Full Sentences</span></a>
+        <a class="video-item" data-href-en="/assets/media/E add symbols.mp4" data-href-ar="/assets/media/A add symbpls.mp4" href="/assets/media/E add symbols.mp4"><span class="num">03</span><span class="label" data-t="tut2">Add Custom Symbols</span></a>
+        <a class="video-item" data-href-en="/assets/media/E search.mp4" data-href-ar="/assets/media/A search.mp4" href="/assets/media/E search.mp4"><span class="num">04</span><span class="label" data-t="tut3">Search Symbols</span></a>
+        <a class="video-item" data-href-en="/assets/media/E zooming and Layout..mp4" data-href-ar="/assets/media/A zooming and Layout.mp4" href="/assets/media/E zooming and Layout..mp4"><span class="num">05</span><span class="label" data-t="tut4">Zoom and Layout</span></a>
+        <a class="video-all" href="/marketing/" data-t="vidAll">View all media →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta wrap">
+  <div class="cta-card">
+    <div class="blob" style="top:-50px;inset-inline-start:-30px;width:180px;height:180px"></div>
+    <div class="blob" style="bottom:-60px;inset-inline-end:-25px;width:200px;height:200px"></div>
+    <h2 class="serif" data-t="finalTitle">Ready to help communication feel easier?</h2>
+    <p data-t="finalLead">Download Souti AAC from the App Store and start building personalized communication today. One purchase, no subscriptions.</p>
+    <a class="btn-white" href="https://apps.apple.com/us/app/soutiaac/id6757438376" target="_blank" rel="noopener" data-t="ctaDownload">Download on the App Store</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">Souti AAC</div>
+    <div class="footer-links">
+      <a href="/marketing/" data-t="navMedia">Media</a>
+      <a href="/support/" data-t="navSupport">Support</a>
+      <a href="/privacy/" data-t="navPrivacy">Privacy</a>
+      <a href="/terms/" data-t="navTerms">Terms</a>
+    </div>
+    <p class="footer-copy">© <span id="year">2026</span> Souti AAC. <span data-t="footerRights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
 </body>
 </html>
