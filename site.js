@@ -4,6 +4,20 @@
 
   var I18N = {
     en: {
+      navBlog: "Blog",
+      blogBadge: "Souti Blog",
+      blogTitle: "The story behind Souti",
+      blogLead: "Read about Souti AAC and find practical ways to make its bilingual communication board your own.",
+      blogProfile: "Amera Hraka on LinkedIn",
+      blogStoryTag: "Behind the app",
+      blogStoryTitle: "Why Souti was built in two languages",
+      blogByline: "From a post by Amera Hraka",
+      blogStoryBody: "In her launch post, Amera shares why she wanted families to be able to use Arabic and English in the same communication app. She also introduces the video series that walks through the app from the first setup.",
+      blogStoryLink: "Read the launch post on LinkedIn",
+      blogLayoutTag: "Using Souti",
+      blogLayoutTitle: "Make symbols easier to see and tap",
+      blogLayoutBody: "Amera demonstrates how to use the zoom controls to resize pictures and Edit Layout to move frequently used symbols. Larger pictures can make individual symbols easier to select; smaller pictures show more choices at once.",
+      blogLayoutLink: "Read the layout tip on LinkedIn",
       navHome: "Home", navMedia: "Media", navSupport: "Support", navPrivacy: "Privacy", navTerms: "Terms", navDownload: "Download", navFeatures: "Features",
       footerRights: "All rights reserved.",
       /* home */
@@ -122,6 +136,20 @@
       tContactBody: "Contact us and we'll be happy to clarify anything:"
     },
     ar: {
+      navBlog: "المدونة",
+      blogBadge: "مدونة صوتي",
+      blogTitle: "قصة تطبيق صوتي",
+      blogLead: "تعرّف على قصة تطبيق صوتي، واكتشف طرقاً عملية لتخصيص لوحة التواصل ثنائية اللغة.",
+      blogProfile: "أميرة حراكة على LinkedIn",
+      blogStoryTag: "قصة التطبيق",
+      blogStoryTitle: "لماذا صُمّم صوتي بلغتين؟",
+      blogByline: "من منشور لأميرة حراكة",
+      blogStoryBody: "توضح أميرة في منشور إطلاق التطبيق لماذا أرادت أن تتمكن العائلات من استخدام العربية والإنجليزية في تطبيق تواصل واحد. كما تقدّم سلسلة فيديوهات تشرح استخدام التطبيق بدءاً من الإعداد الأول.",
+      blogStoryLink: "اقرأ منشور إطلاق التطبيق على LinkedIn",
+      blogLayoutTag: "استخدام صوتي",
+      blogLayoutTitle: "اجعل رؤية الرموز واختيارها أسهل",
+      blogLayoutBody: "تشرح أميرة طريقة تكبير الصور وتصغيرها، وكيفية نقل الرموز كثيرة الاستخدام عبر خيار «تعديل الترتيب». قد تسهّل الصور الكبيرة اختيار كل رمز، بينما تعرض الصور الصغيرة خيارات أكثر على الشاشة.",
+      blogLayoutLink: "اقرأ نصيحة ترتيب الرموز على LinkedIn",
       navHome: "الرئيسية", navMedia: "الوسائط", navSupport: "الدعم", navPrivacy: "الخصوصية", navTerms: "الشروط", navDownload: "تحميل", navFeatures: "المميزات",
       footerRights: "جميع الحقوق محفوظة.",
       heroBadge: "تواصل معزز بالعربية والإنجليزية",

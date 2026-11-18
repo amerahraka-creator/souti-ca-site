@@ -7,6 +7,7 @@ Redesign of souti.ca: new home, media gallery, support (searchable FAQ), privacy
 ```
 index.html              → replaces repo root index.html
 marketing/index.html    → replaces marketing/index.html
+blog/index.html         → bilingual blog with links to Amera Hraka’s public posts
 support/index.html      → replaces support/index.html
 privacy/index.html      → replaces privacy/index.html
 terms/index.html        → replaces terms/index.html
