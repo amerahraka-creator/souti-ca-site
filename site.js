@@ -9,7 +9,8 @@
       /* home */
       heroBadge: "AAC for Arabic + English",
       heroTitle: "Every child deserves a voice in their language",
-      heroLead: "Souti AAC helps children build full sentences, learn vocabulary, and communicate clearly using symbols, custom audio, and child-friendly layouts \u2014 in Arabic and English.",
+      heroLead: "Tap pictures to build a sentence and hear it spoken in Arabic or English.",
+      heroAlt: "Selected picture symbols form a sentence above the Speak button in Souti AAC",
       ctaDownload: "Download on the App Store", ctaWatch: "Watch tutorials",
       trust1t: "Works offline", trust1d: "No connection needed",
       trust2t: "One-time purchase", trust2d: "No subscriptions",
@@ -32,6 +33,8 @@
       vidKicker: "How-to videos", vidTitle: "Learn the app with short tutorials",
       vidLead: "Quick walkthroughs in English and Arabic \u2014 from the first tap to custom symbols.",
       vidFeatLabel: "Start here", vidFeatTitle: "How the App Looks", vidAll: "View all media \u2192",
+      videoLang: "English", videoPlay: "Play", videoClose: "Close",
+      videoOpen: "Open MP4 directly", videoError: "The video couldn't play here. Try opening the MP4 directly.",
       tut1: "Speak Full Sentences", tut2: "Add Custom Symbols", tut3: "Search Symbols", tut4: "Zoom and Layout",
       finalTitle: "Ready to help communication feel easier?",
       finalLead: "Download Souti AAC from the App Store and start building personalized communication today. One purchase, no subscriptions.",
@@ -49,6 +52,7 @@
       sBadge: "Support Center", sTitle: "How can we help?",
       sLead: "Find answers to common questions, learn how to get the most out of Souti, or reach our team directly \u2014 we usually reply within a few days.",
       searchPh: "Search questions\u2026",
+      searchLabel: "Search questions",
       qcEmailLabel: "Email", qcEmailTitle: "Write to us",
       qcTimeLabel: "Timing", qcTimeTitle: "Response time", qcTimeValue: "1\u20133 business days",
       qcLangLabel: "Languages", qcLangTitle: "Bilingual help", qcLangValue: "Arabic & English",
@@ -122,7 +126,8 @@
       footerRights: "جميع الحقوق محفوظة.",
       heroBadge: "تواصل معزز بالعربية والإنجليزية",
       heroTitle: "كل طفل يستحق صوتاً بلغته",
-      heroLead: "يساعد Souti AAC الأطفال على بناء جمل كاملة، وتعلم المفردات، والتواصل بوضوح باستخدام الرموز والصوت المخصص وواجهات صديقة للأطفال — بالعربية والإنجليزية.",
+      heroLead: "اضغط على الصور لتكوين جملة وسماعها بالعربية أو الإنجليزية.",
+      heroAlt: "رموز مصوّرة مختارة تكوّن جملة فوق زر التحدّث في تطبيق صوتي",
       ctaDownload: "حمّله من متجر التطبيقات", ctaWatch: "شاهد الشروحات",
       trust1t: "يعمل بدون إنترنت", trust1d: "لا حاجة للاتصال",
       trust2t: "شراء لمرة واحدة", trust2d: "بدون اشتراكات",
@@ -145,6 +150,8 @@
       vidKicker: "فيديوهات تعليمية", vidTitle: "تعلّم التطبيق بشروحات قصيرة",
       vidLead: "جولات سريعة بالعربية والإنجليزية — من أول ضغطة إلى الرموز المخصصة.",
       vidFeatLabel: "ابدأ هنا", vidFeatTitle: "شكل التطبيق", vidAll: "عرض كل الوسائط ←",
+      videoLang: "العربية", videoPlay: "شغّل", videoClose: "إغلاق",
+      videoOpen: "افتح الفيديو مباشرةً", videoError: "تعذّر تشغيل الفيديو هنا. جرّب فتح ملف الفيديو مباشرةً.",
       tut1: "نطق الجمل الكاملة", tut2: "إضافة رموز مخصصة", tut3: "البحث عن الرموز", tut4: "التكبير والتخطيط",
       finalTitle: "مستعد لجعل التواصل أسهل؟",
       finalLead: "حمّل Souti AAC من متجر التطبيقات وابدأ ببناء تواصل مخصص اليوم. شراء واحد، بدون اشتراكات.",
@@ -160,6 +167,7 @@
       sBadge: "مركز الدعم", sTitle: "كيف يمكننا مساعدتك؟",
       sLead: "اعثر على إجابات للأسئلة الشائعة، وتعلّم كيف تحقق أقصى استفادة من Souti، أو تواصل مع فريقنا مباشرة — نردّ عادةً خلال أيام قليلة.",
       searchPh: "ابحث في الأسئلة…",
+      searchLabel: "ابحث في الأسئلة",
       qcEmailLabel: "البريد", qcEmailTitle: "راسلنا",
       qcTimeLabel: "التوقيت", qcTimeTitle: "وقت الاستجابة", qcTimeValue: "١–٣ أيام عمل",
       qcLangLabel: "اللغات", qcLangTitle: "دعم ثنائي اللغة", qcLangValue: "العربية والإنجليزية",
@@ -248,8 +256,29 @@
       var k = el.getAttribute("data-t-ph");
       if (dict[k] != null) el.setAttribute("placeholder", dict[k]);
     });
+    document.querySelectorAll("[data-t-alt]").forEach(function (el) {
+      el.alt = dict[el.dataset.tAlt];
+    });
+    document.querySelectorAll("[data-t-label]").forEach(function (el) {
+      el.setAttribute("aria-label", dict[el.dataset.tLabel]);
+    });
+    document.querySelectorAll("[data-src-en]").forEach(function (el) {
+      var src = lang === "ar" ? el.dataset.srcAr : el.dataset.srcEn;
+      if (el.getAttribute("src") !== src) el.src = src;
+    });
     document.querySelectorAll("[data-href-en]").forEach(function (el) {
       el.setAttribute("href", el.getAttribute(lang === "ar" ? "data-href-ar" : "data-href-en"));
+      var meta = el.videoMeta;
+      if (!meta) return;
+      var duration = lang === "ar" ? el.dataset.durationAr : el.dataset.durationEn;
+      var bilingual = el.dataset.hrefEn !== el.dataset.hrefAr;
+      meta.replaceChildren();
+      if (bilingual) meta.append(dict.videoLang + " · ");
+      var time = document.createElement("bdi");
+      time.dir = "ltr";
+      time.textContent = duration;
+      meta.append(time);
+      el.setAttribute("aria-label", dict.videoPlay + ": " + el.videoTitle.textContent + " · " + meta.textContent);
     });
     document.querySelectorAll(".lang-btn").forEach(function (b) {
       var active = b.getAttribute("data-lang") === lang;
@@ -314,12 +343,73 @@
     });
   }
 
+  function initVideos() {
+    var links = document.querySelectorAll("a[data-duration-en]");
+    if (!links.length) return;
+
+    var player = document.createElement("dialog");
+    player.className = "video-dialog";
+    player.setAttribute("aria-labelledby", "video-dialog-title");
+    player.innerHTML = `
+      <div class="video-dialog-header">
+        <h2 id="video-dialog-title"></h2>
+        <form method="dialog"><button type="submit" autofocus data-t="videoClose">Close</button></form>
+      </div>
+      <video controls playsinline preload="none" aria-labelledby="video-dialog-title" poster="/assets/media/video-cover.png"></video>
+      <div class="video-dialog-footer">
+        <p hidden role="status" data-t="videoError"></p>
+        <a data-t="videoOpen">Open MP4 directly</a>
+      </div>`;
+    var video = player.querySelector("video");
+    var title = player.querySelector("h2");
+    var error = player.querySelector('[role="status"]');
+    var direct = player.querySelector("a");
+    var opener;
+    video.addEventListener("error", function () { error.hidden = !video.hasAttribute("src"); });
+    player.addEventListener("close", function () {
+      if (player.open) return;
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+      if (opener) opener.focus({ preventScroll: true });
+    });
+    var supportsDialog = typeof player.showModal === "function";
+    if (supportsDialog) document.body.append(player);
+
+    links.forEach(function (link) {
+      var card = link.closest(".media-card");
+      var label = card ? card.querySelector(".media-meta p") : link.querySelector(".video-feature-title, .label");
+      var meta = document.createElement("span");
+      meta.className = "video-details";
+      if (card) card.querySelector(".media-tag.video").replaceWith(meta);
+      else label.after(meta);
+      link.videoMeta = meta;
+      link.videoTitle = label;
+      if (!supportsDialog) return;
+
+      link.addEventListener("click", function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        opener = link;
+        title.textContent = label.textContent;
+        error.hidden = true;
+        direct.href = link.href;
+        video.src = link.href;
+        player.showModal();
+        video.play().catch(function () {
+          // Native controls remain available if autoplay is blocked.
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".lang-btn").forEach(function (b) {
       b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
     });
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
+    initVideos();
     applyLang(getLang());
     initFaq();
     initMediaFilter();
